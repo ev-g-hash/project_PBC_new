@@ -1,0 +1,56 @@
+необходимо создать django-проект в котором:
+
+имеется приложение main_shop в котором:
+    имеются файлы:
+    	index.html, aboutas.html, forms.html, readmore.html
+
+    forms.py содержит следующие поля:
+	name, email, phone, message
+
+    urls.py содержит следующие пути:
+	aboutas/, readmore/, forms/  
+
+    views.py содержит обязательное условие в свох представлениях:   
+        def index - render shop/index.html
+	def aboutas - render shop/aboutas.html
+	def readmore - render shop/readmore.html
+	def forms - request.method == 'POST' всех полей forms.py
+	после заполнения и отправки формы пользователем выводится сообщение - Ожидайте в ближайшее время мы с вами свяжемся!
+        
+В проекте после заполнения формы пользователем и нажатии кнопки отправить данная форма
+отправляется в Telegram Bot имеющий следующие настройки: 
+  const BOT_TOKEN = '8581138752:AAEyEJWYZrjo0GjdKowbIk23tA9k7qDr0oY';
+  const CHAT_ID = '443467930';
+  const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+  который будет выводить следующее сообщение в чат:
+	Вам новая заявка:
+	Имя: name поле заполненное пользователем в форме
+	Email: email поле заполненное пользователем в форме 
+	Телефон: phone поле заполненное пользователем в форме
+	Сообщение: message поле заполненное пользователем в форме  
+
+index.html - содержит в себе:
+	навигацию с действующими ссылками:
+	    Главная - index.html, О нас - aboutas.html, Подробнее - readmore.html, Подать заявку - ссылка forms.html
+
+стили css оформлены через static, bootstrap через cdn ссылки
+указать все необходимые настройки settigs.py.
+
+В корне проекта имеется папка static где содержаться стили html файлов
+В корне имеется папка templates где содежаться html файлы 
+
+вывести все файлы проекта.
+
+
+
+////////////////////////////////////////////////////////////////
+python -m venv venv_pnew
+venv_pnew\Scripts\activate
+python -m pip install --upgrade pip
+pip install django        
+django-admin startproject main .
+python manage.py runserver
+python manage.py migrate 
+python manage.py startapp journal
+python manage.py startapp accounts
+ 
