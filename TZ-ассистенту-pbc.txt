@@ -48,9 +48,20 @@ python -m venv venv_pnew
 venv_pnew\Scripts\activate
 python -m pip install --upgrade pip
 pip install django        
-django-admin startproject main .
+django-admin startproject shop .
 python manage.py runserver
 python manage.py migrate 
-python manage.py startapp journal
-python manage.py startapp accounts
+python manage.py startapp main_shop
+создать файл requirements.txt
+pip install -r requirements.txt
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
  
