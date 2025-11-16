@@ -9,22 +9,22 @@ from goods.forms import ProductOrderForm
 
 
 def index(request):
-    return render(request, 'shop/index.html')
+    return render(request, 'main_shop/index.html')
 
 
 def aboutas(request):
-    return render(request, 'shop/aboutas.html')
+    return render(request, 'main_shop/aboutas.html')
 
 
 def readmore(request):
-    return render(request, 'shop/readmore.html')
+    return render(request, 'main_shop/readmore.html')
 
 @require_http_methods(["GET", "POST"])
 def forms(request):
     """Обработка формы заявки"""
     if request.method == 'GET':
         form = ContactForm()
-        return render(request, 'shop/forms.html', {'form': form})
+        return render(request, 'main_shop/forms.html', {'form': form})
     
     elif request.method == 'POST':
         form = ContactForm(request.POST)
@@ -62,7 +62,7 @@ Email: {email}
             # Возвращаем сообщение пользователю
             return HttpResponse("Ожидайте в ближайшее время мы с вами свяжемся!")
         else:
-            return render(request, 'shop/forms.html', {'form': form})
+            return render(request, 'main_shop/forms.html', {'form': form})
 
 
 @require_http_methods(["GET", "POST"])

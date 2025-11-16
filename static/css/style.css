@@ -9,15 +9,17 @@ body {
 /* Навигация */
 .navbar-brand {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
-.navbar-nav .nav-link {
+.navbar-nav {    
+    font-size: 1.1rem; /* Увеличиваем размер шрифта */
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffd700 !important;
+    color: lab(99.95% -0.34 0.94);
 }
 
 /* Jumbotron */

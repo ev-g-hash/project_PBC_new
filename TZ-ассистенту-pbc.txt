@@ -91,12 +91,10 @@ python manage.py createsuperuser
 	admin
 	admin_7y6u0d2d
 
-2. Принудительно обновите CSS в браузере:
-Windows/Linux: Ctrl + F5 или Ctrl + Shift + R
-
-{% load static %}
-<link href="{% static 'css/style.css' %}?v=2" rel="stylesheet">
+сделай в navbar <li> - Главная, Каталог, О нас, Подробнее, Подать заявку
+шрифт немного покрупнее
+  
 
 
-aboutas.html, readmore.html, forms.html
- 
+
+
