@@ -53,15 +53,50 @@ python manage.py runserver
 python manage.py migrate 
 python manage.py startapp main_shop
 создать файл requirements.txt
+
 pip install -r requirements.txt
+	Django==5.2.8
+	requests==2.32.5
+
+python manage.py runserver
+
 ////////////////////////////////////////////////////////////////
+доработка проекта:
+    создать приложение goods:
+        создать models.py:
+		class Categories в котором прописаны поля:
+			name
+    		class Products в котором прописаны поля:
+			name, description, image
+к этой модели создать необходимые файлы urls.py, views.py, admin.py
+папку templates в которой файлы catalog.html и product.html
+
+сделать ссылки с index.html на файлы catalog.html и product.html
+сделать возможным добавление изображения admin-у
+продукции в файле product.html 
+под каждым изображением сделать ссылку на форму (forms.py)
+название ссылки - заказать товар
+на странице должно размещаться не более 6 изображений
+
+внести все необходимые изменения в текущий проект
+вывести все новые созданные файлы и файлы которых коснулись изменения,
+а так же все изменённые и новые настройки проекта.
+////////////////////////////////////////////////////////////////
+python manage.py startapp goods
+pip install Pillow
+Pillow==12.0.0
+python manage.py makemigrations goods
+python manage.py migrate
+python manage.py createsuperuser
+	admin
+	admin_7y6u0d2d
+
+2. Принудительно обновите CSS в браузере:
+Windows/Linux: Ctrl + F5 или Ctrl + Shift + R
+
+{% load static %}
+<link href="{% static 'css/style.css' %}?v=2" rel="stylesheet">
 
 
-
-
-
-
-
-
-
+aboutas.html, readmore.html, forms.html
  

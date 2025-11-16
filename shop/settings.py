@@ -1,4 +1,4 @@
-# shop/settings.py
+# shop/settings.py (добавлены настройки для медиа-файлов и нового приложения)
 """
 Django settings for shop project.
 """
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main_shop',
+    'goods',  # Добавлено новое приложение
 ]
 
 MIDDLEWARE = [
@@ -94,7 +95,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Media files
+# Media files (для загрузки изображений товаров)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
