@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block forms %}
 
@@ -56,6 +57,8 @@
         </div>        
     </div>
 </div>
+
+<script src="{% static "js/script_forms.js" %}"></script>
 
 {% endblock forms %}
 

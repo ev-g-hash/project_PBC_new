@@ -46,6 +46,7 @@ index.html - содержит в себе:
 ////////////////////////////////////////////////////////////////
 python -m venv venv_pnew
 venv_pnew\Scripts\activate
+venv_hp\Scripts\activate
 python -m pip install --upgrade pip
 pip install django        
 django-admin startproject shop .
@@ -90,11 +91,32 @@ python manage.py migrate
 python manage.py createsuperuser
 	admin
 	admin_7y6u0d2d
-
+///////////////////
 сделай в navbar <li> - Главная, Каталог, О нас, Подробнее, Подать заявку
 шрифт немного покрупнее
-  
+
+///////////////////
+во views.py в def forms(request):
+при отправки заявки возвращаем пользователю сообщение
+return HttpResponse("Ожидайте в ближайшее время мы с вами свяжемся!")
+необходимо сделать кнопку возврата на главную страницу либо в этом ответе
+- либо сделать всплывающее сообщение при отправке формы пользователем 
+"Ожидайте в ближайшее время мы с вами свяжемся!" и редирект на главную.
+Предложи варианты.  
+
+прописываю url 
+
+<script src="{% static 'script.js' %}"></script> 
+
+
+как правильно указать url в этой строке <li class="breadcrumb-item"><a href="/goods/category/{{ product.category.id }}/">{{ product.category.name }}</a></li>
+если у меня в шаблоне подгружен {% load static %}
 
 
 
 
+
+
+
+
+ 

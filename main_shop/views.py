@@ -19,6 +19,7 @@ def aboutas(request):
 def readmore(request):
     return render(request, 'main_shop/readmore.html')
 
+# main_shop/views.py (обновленный def forms)
 @require_http_methods(["GET", "POST"])
 def forms(request):
     """Обработка формы заявки"""
@@ -59,8 +60,12 @@ Email: {email}
             except Exception as e:
                 print(f"Ошибка отправки в Telegram: {e}")
 
-            # Возвращаем сообщение пользователю
-            return HttpResponse("Ожидайте в ближайшее время мы с вами свяжемся!")
+            # Возвращаем красивую страницу с сообщением и кнопками
+            context = {
+                'success_message': 'Ожидайте в ближайшее время мы с вами свяжемся!',
+                'user_name': name
+            }
+            return render(request, 'main_shop/success.html', context)
         else:
             return render(request, 'main_shop/forms.html', {'form': form})
 
